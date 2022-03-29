@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        int lado, triangulo, dimension1, dimension2;
 	    int opcion;
         Scanner entrada = new Scanner(System.in);
 
@@ -18,8 +19,27 @@ public class Main {
             opcion = entrada.nextInt();
             entrada.nextLine();
 
-            // TODO Completa el programa con un switch para realizar lo indicado en el menú.
-            //      Usa los métodos estáticos que ya hay implementadas y que puedes ver debajo.
+            //  HECHO: Completa el programa con un switch para realizar lo indicado en el menú.
+            //   HECHO:   Usa los métodos estáticos que ya hay implementadas y que puedes ver debajo.
+
+            switch (opcion) {
+                case 1:
+                    lado = pedirNumero(entrada, "Número para formar el cuadrado: ");
+                    dibujarCuadrado(lado);
+                    break;
+                case 2:
+                    triangulo = pedirNumero(entrada, "Número para formar el triángulo rectángulo: ");
+                    dibujarTrianguloRectangulo(triangulo);
+                    break;
+                case 3:
+                    dimension1 = pedirNumero(entrada, "Ancho de dimensión: ");
+                    dimension2 = pedirNumero(entrada, "Alto de dimensión: ");
+                    dibujarPuntos(dimension1,dimension2);
+                    break;
+                case 0:
+                    System.out.println("Programa acabado!!");
+                    break;
+            }
 
             System.out.print("Intro para continuar...");
             entrada.nextLine();
